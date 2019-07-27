@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var db_1 = require("./startup/db"); //file hierarchy
 var express_1 = __importDefault(require("express"));
 var body_parser_1 = __importDefault(require("body-parser"));
+var route_1 = require("./startup/route");
 var ToDoApp = /** @class */ (function () {
     function ToDoApp() {
         this.app = express_1.default();
@@ -20,6 +21,7 @@ var ToDoApp = /** @class */ (function () {
             console.log("Server is running");
         });
         this.configBodyParser();
+        route_1.router.configRoutes(this.app);
         db_1.DB.connectMongoDB();
     }
     ToDoApp.prototype.configBodyParser = function () {

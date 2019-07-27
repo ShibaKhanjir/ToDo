@@ -8,7 +8,7 @@
 import {DB} from "./startup/db"          //file hierarchy
 import   express, { Router } from "express"
 import bodyParser from "body-parser"
-import {router} from "./startup/router"
+import {router} from "./startup/route"
 
 class ToDoApp{
     app : express.Application;
@@ -17,8 +17,9 @@ class ToDoApp{
         this.app.listen(3000, 'localhost',() => {
             console.log("Server is running");          
         })  
+        this.configBodyParser();
         router.configRoutes(this.app)
-       this.configBodyParser();
+
        DB.connectMongoDB();
     }
 
