@@ -15,4 +15,23 @@ import {TodoService} from "./../services/todoService"
         
 
     }
+
+    public async GetTodoByName(req : express.Request, res : express.Response){
+        let result = await TodoService.GetTodoByName(req,res);
+        res.json(result)
+        console.log(req.query);
+        
+
+    }
+
+    public async GetTodoById(req:express.Request , res : express.Response){
+        let result = await TodoService.GetTodoById(req,res);
+        res.json(result);
+    }
+
+
+    public async findById(req:express.Request , res : express.Response){
+        let result = await TodoService.findById(req,res);
+        res.json(result);
+    }
 }

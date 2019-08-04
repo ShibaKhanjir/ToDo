@@ -6,3 +6,6 @@ var todocontrollerObj = new todocontroller_1.TodoController();
 exports.todoRouter = express_1.Router();
 exports.todoRouter.post('/create', todocontrollerObj.createToDo);
 exports.todoRouter.get('/', todocontrollerObj.GetAllToDo);
+exports.todoRouter.get('/getTodoByName', todocontrollerObj.GetTodoByName);
+exports.todoRouter.get('/:todoId', todocontrollerObj.GetTodoById);
+exports.todoRouter.put('/update/:todoId', todocontrollerObj.findById);

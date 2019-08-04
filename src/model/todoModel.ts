@@ -13,4 +13,4 @@ import mongoose from "mongoose"
 //# register table/collection to database
 
 
-export const todoModel = mongoose.model('todo', todoSchema)
+export const todoModel = mongoose.model('todo', todoSchema);

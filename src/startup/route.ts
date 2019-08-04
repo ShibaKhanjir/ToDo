@@ -8,7 +8,7 @@ export class router{
    }
 public static configRoutes(app:express.Application):void{
     app.get('/', (req:express.Request , res : express.Response) =>{res.status(200).json({"success": "Server is up and running"}); })
-    app.use('/todo', todoRouter)
-}
+    app.use('/todo', todoRouter);
+   }
 
 }

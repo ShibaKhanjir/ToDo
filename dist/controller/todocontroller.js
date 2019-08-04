@@ -67,6 +67,49 @@ var TodoController = /** @class */ (function () {
             });
         });
     };
+    TodoController.prototype.GetTodoByName = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, todoService_1.TodoService.GetTodoByName(req, res)];
+                    case 1:
+                        result = _a.sent();
+                        res.json(result);
+                        console.log(req.query);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    TodoController.prototype.GetTodoById = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, todoService_1.TodoService.GetTodoById(req, res)];
+                    case 1:
+                        result = _a.sent();
+                        res.json(result);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    TodoController.prototype.findById = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, todoService_1.TodoService.findById(req, res)];
+                    case 1:
+                        result = _a.sent();
+                        res.json(result);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
     return TodoController;
 }());
 exports.TodoController = TodoController;

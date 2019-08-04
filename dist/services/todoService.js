@@ -81,6 +81,74 @@ var TodoService = /** @class */ (function () {
             });
         });
     };
+    TodoService.GetTodoByName = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var allTodo, err_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, todoModel_1.todoModel.find({ "name": req.query.name }).exec()]; //todoModel = table/collection , find =  method to get data // exec to executte query
+                    case 1:
+                        allTodo = _a.sent() //todoModel = table/collection , find =  method to get data // exec to executte query
+                        ;
+                        return [2 /*return*/, allTodo];
+                    case 2:
+                        err_3 = _a.sent();
+                        console.log(err_3);
+                        return [2 /*return*/, err_3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    TodoService.GetTodoById = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var allTodo, err_4;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, todoModel_1.todoModel.findById(req.params.todoId).exec()]; //todoModel = table/collection , find =  method to get data // exec to executte query
+                    case 1:
+                        allTodo = _a.sent() //todoModel = table/collection , find =  method to get data // exec to executte query
+                        ;
+                        return [2 /*return*/, allTodo]; //make sure use params
+                    case 2:
+                        err_4 = _a.sent();
+                        console.log(err_4);
+                        return [2 /*return*/, err_4];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    TodoService.findById = function (req, res) {
+        return __awaiter(this, void 0, void 0, function () {
+            var allTodo, err_5;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 3, , 4]);
+                        return [4 /*yield*/, todoModel_1.todoModel.findById(req.params.todoId).exec()]; //todoModel = table/collection , find =  method to get data // exec to executte query
+                    case 1:
+                        allTodo = _a.sent() //todoModel = table/collection , find =  method to get data // exec to executte query
+                        ;
+                        allTodo.description = req.body.description;
+                        allTodo.completed = req.body.completed;
+                        return [4 /*yield*/, allTodo.save()];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/, allTodo]; //make sure use params
+                    case 3:
+                        err_5 = _a.sent();
+                        console.log(err_5);
+                        return [2 /*return*/, err_5];
+                    case 4: return [2 /*return*/];
+                }
+            });
+        });
+    };
     return TodoService;
 }());
 exports.TodoService = TodoService;
